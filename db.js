@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const { STRING } = Sequelize;
+
 const config = {};
 if(process.env.SSL){
     console.log('yes');
@@ -10,7 +11,7 @@ if(process.env.SSL){
     };
 }
 
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:JerryPine@localhost/acme_db');
+const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:JerryPine@localhost/acme_db', config);
 
 const Product = conn.define('product', {
     name: STRING
