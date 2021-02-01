@@ -13,7 +13,7 @@ const config = {  ssl: {
 //     };
 // }
 
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:JerryPine@localhost/acme_db', {ssl: { rejectUnauthorized: false }});
+const conn = new Sequelize({connectionString: process.env.DATABASE_URL || 'postgres://postgres:JerryPine@localhost/acme_db', ssl: { rejectUnauthorized: false }});
 
 const Product = conn.define('product', {
     name: STRING
