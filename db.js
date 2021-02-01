@@ -16,7 +16,7 @@ const config = {  ssl: {
 const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:JerryPine@localhost/acme_db');
 
 const Product = conn.define('product', {
-    name: STRING
+    name: STRING,
 });
 
 const syncAndSeed = async()=> {
